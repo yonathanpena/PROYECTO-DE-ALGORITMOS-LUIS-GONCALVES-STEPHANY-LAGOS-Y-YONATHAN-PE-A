@@ -90,3 +90,176 @@ class SistemaMeteoCaracas:
         except Exception as error:
             print(f"Error al conectar con la API: {error}")
             return None
+
+    def obtener_descripcion_clima(self, codigo):
+            """Traduce el código numérico de estado del tiempo otorgado por la API a una descripción textual comprensible por el usuario."""
+          
+            tabla_codigos = [
+                [0, "Cielo despejado"],
+                [1, "Principalmente despejado"],
+                [2, "Parcialmente nublado"],
+                [3, "Nublado"],
+                [45, "Niebla"],
+                [48, "Niebla con escarcha"],
+                [51, "Llovizna ligera"],
+                [53, "Llovizna moderada"],
+                [55, "Llovizna intensa"],
+                [56, "Llovizna helada ligera"],
+                [57, "Llovizna helada intensa"],
+                [61, "Lluvia leve"],
+                [63, "Lluvia moderada"],
+                [65, "Lluvia fuerte"],
+                [66, "Lluvia helada leve"],
+                [67, "Lluvia helada fuerte"],
+                [71, "Nevada leve"],
+                [73, "Nevada moderada"],
+                [75, "Nevada fuerte"],
+                [77, "Granos de nieve"],
+                [80, "Lluvia leve"],
+                [81, "Lluvia moderada"],
+                [82, "Lluvia violenta"],
+                [85, "Lluvia de nieve leve"],
+                [86, "Lluvia de nieve fuerte"],
+                [95, "Tormenta eléctrica leve o moderada"],
+                [96, "Tormenta eléctrica con granizo ligero"],
+                [99, "Tormenta eléctrica con granizo fuerte"]
+            ]
+    
+            for elemento in tabla_codigos:
+                numero = elemento[0]
+                descripcion = elemento[1]
+                
+                if codigo == numero:
+                    return descripcion
+    
+            return "Estado del tiempo no especificado"   
+    
+    def registrar_consulta(self, municipio_nombre, localidad_nombre, temperatura):
+        """Guarda un registro de la consulta en la lista_historial_consultas de la sesión mediante un objeto ConsultaHistorial."""
+
+        nueva_consulta = ConsultaHistorial(municipio_nombre, localidad_nombre, temperatura)
+        self.lista_historial_consultas.append(nueva_consulta)
+
+    def mostrar_detalle_clima(self, municipio_nombre, localidad, clima):
+        """Imprime en pantalla los datos del clima actual para una localidad específica."""
+        if clima is None:
+            print("\nNo se pudieron obtener los datos del clima.")
+            return
+
+        self.registrar_consulta(municipio_nombre, localidad.nombre, clima.temperatura)
+
+        descripcion = self.obtener_descripcion_clima(clima.codigo_tiempo)
+
+        print("\n\t=== DETALLES METEOROLÓGICOS ===\n")
+        print(f"Municipio:           {municipio_nombre}")
+        print(f"Localidad:           {localidad.nombre}")
+        print(f"Coordenadas:         Lat: {localidad.latitud} | Lon: {localidad.longitud}")
+        print(f"Temperatura actual:  {clima.temperatura} °C")
+        print(f"Humedad relativa:    {clima.humedad} %")
+        print(f"Velocidad viento:    {clima.velocidad_viento} km/h")
+        print(f"Estado del tiempo:   {descripcion}")
+        print()
+    
+    def seleccionar_localidad_menu(self):
+        """Método auxiliar para seleccionar un municipio y una localidad con coordenadas."""
+        print("\n\t=== SELECCIONE UN MUNICIPIO ===")
+        posicion = 1
+        for municipio in self.lista_municipios:
+            print(f"{posicion}. {municipio.nombre}")
+            posicion += 1
+
+        try:
+            opcion = int(input("\nIngrese el número del municipio: "))
+            indice_municipio = opcion - 1
+
+            if indice_municipio < 0 or indice_municipio >= len(self.lista_municipios):
+                print("Número fuera de rango.")
+                return None
+        except ValueError:
+            print("Opción inválida. Debe ingresar un número entero válido.")
+            return None
+
+        municipio_seleccionado = self.lista_municipios[indice_municipio]
+
+        lista_localidades_validas = []
+        for localidad in municipio_seleccionado.localidades:
+            if localidad.tiene_coordenadas():
+                lista_localidades_validas.append(localidad)
+
+        if len(lista_localidades_validas) == 0:
+            print(f"\nEl municipio {municipio_seleccionado.nombre} no tiene localidades con coordenadas registradas.")
+            return None
+
+        print(f"\n\t=== LOCALIDADES DISPONIBLES EN {municipio_seleccionado.nombre.upper()} ===")
+        posicion_localidad = 1
+        for localidad in lista_localidades_validas:
+            print(f"{posicion_localidad}. {localidad.nombre}")
+            posicion_localidad += 1
+
+        try:
+            opcion_localidad = int(input("\nIngrese el número de la localidad: "))
+            indice_localidad = opcion_localidad - 1
+            if indice_localidad < 0 or indice_localidad >= len(lista_localidades_validas):
+                print("Número fuera de rango.")
+                return None
+        except ValueError:
+            print("Opción inválida. Debe ingresar un número entero válido.")
+
+        return municipio_seleccionado.nombre, lista_localidades_validas[indice_localidad]
+
+    def consultar_por_municipio(self):
+            """Permite interactuar con el menú para seleccionar un municipio y una de sus localidades válidas. 
+            Una vez elegida la localidad, obtiene sus datos meteorológicos en tiempo real mediante la API y lo imprime en pantalla.
+            """
+            resultado = self.seleccionar_localidad_menu()
+            if resultado is None:
+                return
+    
+            municipio_nombre, localidad_seleccionada = resultado
+    
+            print(f"\nConsultando clima para {localidad_seleccionada.nombre}...")
+            clima = self.consultar_clima_api(localidad_seleccionada)
+            self.mostrar_detalle_clima(municipio_nombre, localidad_seleccionada, clima)
+    
+    def consultar_por_busqueda_directa(self):
+        """Filtra y busca localidades por coincidencia en el nombre y muestra su clima actual."""
+        texto_busqueda = input("\nIngrese el nombre (o parte del nombre) de la localidad: ").strip().lower()
+
+        if texto_busqueda == "":
+            print("No ingresó ningún texto.")
+            return
+
+        lista_coincidencias = []
+
+        for municipio in self.lista_municipios:
+            for localidad in municipio.localidades:
+                if texto_busqueda in localidad.nombre.lower() and localidad.tiene_coordenadas():
+                    lista_coincidencias.append((municipio.nombre, localidad))
+
+        if len(lista_coincidencias) == 0:
+            print(f"\nNo se encontraron localidades válidas que coincidan con \"{texto_busqueda}\".")
+            return
+
+        print(f"\n\t=== RESULTADOS DE LA BÚSQUEDA ===")
+        posicion = 1
+        for item in lista_coincidencias:
+            municipio_nombre = item[0]
+            localidad_objeto = item[1]
+            print(f"{posicion}. {localidad_objeto.nombre} (Municipio: {municipio_nombre})")
+            posicion += 1
+
+        try:
+            opcion = int(input("\nSeleccione el número de la localidad deseada: "))
+            indice = opcion - 1
+
+            if indice < 0 or indice >= len(lista_coincidencias):
+                print("Número fuera de rango.")
+                return
+        except ValueError:
+            print("Opción inválida. Debe ingresar un número entero válido.")
+            return
+
+        municipio_seleccionado, localidad_seleccionada = lista_coincidencias[indice]
+
+        clima = self.consultar_clima_api(localidad_seleccionada)
+        self.mostrar_detalle_clima(municipio_seleccionado, localidad_seleccionada, clima)
