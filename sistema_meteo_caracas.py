@@ -263,3 +263,150 @@ class SistemaMeteoCaracas:
 
         clima = self.consultar_clima_api(localidad_seleccionada)
         self.mostrar_detalle_clima(municipio_seleccionado, localidad_seleccionada, clima)
+
+    def ejecutar_menu_consulta_tiempo_real(self):
+        """Despliega un submenú interactivo para consultar el clima en tiempo real por municipio o búsqueda directa."""
+        while True:
+            try:
+                print("\n\t=== ¿CÓMO DESEA CONSULTAR EL CLIMA? ===")
+                print("1. Por Municipio y Localidad")
+                print("2. Por Búsqueda Directa (Nombre)")
+                print("3. Volver al menú principal")
+
+                sub_opcion = int(input("\nElija una opción (1-3): "))
+
+                if sub_opcion == 1:
+                    self.consultar_por_municipio()
+                elif sub_opcion == 2:
+                    self.consultar_por_busqueda_directa()
+                elif sub_opcion == 3:
+                    break
+                else:
+                    print("\nOpción no válida.")
+
+            except Exception as error:
+                print(f"\nEntrada o proceso inválido: {error}")
+
+    def mostrar_ranking_temperatura(self):
+        """Muestra la localidad más cálida y más fría consultadas en la sesión."""
+        if len(self.lista_historial_consultas) == 0:
+            print("\nAún no se ha realizado ninguna consulta en esta sesión.")
+            return
+
+        localidad_mas_calida = self.lista_historial_consultas[0]
+        localidad_mas_fria = self.lista_historial_consultas[0]
+
+        for consulta in self.lista_historial_consultas:
+            if consulta.temperatura > localidad_mas_calida.temperatura:
+                localidad_mas_calida = consulta
+            
+            if consulta.temperatura < localidad_mas_fria.temperatura:
+                localidad_mas_fria = consulta
+
+        print("\n\t=== RANKING DE TEMPERATURA ===")
+        print(f"Localidad más cálida: {localidad_mas_calida.localidad_nombre} ({localidad_mas_calida.municipio_nombre}) con {localidad_mas_calida.temperatura} °C")
+        print(f"Localidad más fría: {localidad_mas_fria.localidad_nombre} ({localidad_mas_fria.municipio_nombre}) con {localidad_mas_fria.temperatura} °C")
+
+    def mostrar_cobertura_geografica(self):
+        """Muestra las localidades sin coordenadas agrupadas por municipio."""
+        print("\n\t=== COBERTURA GEOGRÁFICA (LOCALIDADES SIN COORDENADAS) ===")
+        
+        for municipio in self.lista_municipios:
+            print(f"\nMunicipio: {municipio.nombre}")
+            contador_sin_coordenadas = 0
+            
+            for localidad in municipio.localidades:
+                if not localidad.tiene_coordenadas():
+                    print(f" - {localidad.nombre}")
+                    contador_sin_coordenadas += 1
+            
+            if contador_sin_coordenadas == 0:
+                print("Todas las localidades tienen coordenadas registradas")
+
+    def mostrar_promedio_general(self):
+        """Calcula y muestra el promedio de temperatura de las localidades consultadas utilizando un arreglo NumPy."""
+        if len(self.lista_historial_consultas) == 0:
+            print("\nAún no se ha realizado ninguna consulta en esta sesión.")
+            return
+
+        lista_temperaturas = []
+        for consulta in self.lista_historial_consultas:
+            lista_temperaturas.append(consulta.temperatura)
+
+        array_temperaturas = np.array(lista_temperaturas)
+        promedio = np.mean(array_temperaturas)
+
+        print("\n\t=== PROMEDIO GENERAL DE LA SESIÓN ===")
+        print(f"Total de consultas realizadas: {len(lista_temperaturas)}")
+        print(f"Promedio de temperatura: {promedio:.2f} °C")
+
+    def ejecutar_menu_estadisticas(self):
+        """Imprime un submenú interactivo para acceder a los reportes y estadísticas."""
+        while True:
+            try:
+                print("\n\t=== MÓDULO DE REPORTES Y ESTADÍSTICAS ===\n")
+                print("1. Ranking de Temperatura (Más cálida y más fría)")
+                print("2. Cobertura Geográfica (Localidades sin coordenadas)")
+                print("3. Promedio General de Temperatura de las localidades consultadas")
+                print("4. Volver al menú principal")
+
+                opcion = int(input("\nElija una opción (1-4): "))
+
+                if opcion == 1:
+                    self.mostrar_ranking_temperatura()
+                elif opcion == 2:
+                    self.mostrar_cobertura_geografica()
+                elif opcion == 3:
+                    self.mostrar_promedio_general()
+                elif opcion == 4:
+                    break
+                else:
+                    print("\nOpción no válida. Por favor, intente de nuevo.")
+
+            except Exception as error:
+                print(f"\nOcurrió un error inesperado en el módulo de estadísticas: {error}")
+
+    def consultar_historico_api(self, localidad, fecha_inicio, fecha_fin):
+
+        """Consulta la API de Open-Meteo para obtener variables climáticas históricas en un rango de fechas y las convierte en una lista de objetos ClimaHistorico.
+        """
+
+        url = "https://archive-api.open-meteo.com/v1/archive"
+        parametros = {
+            "latitude": localidad.latitud,
+            "longitude": localidad.longitud,
+            "start_date": fecha_inicio,
+            "end_date": fecha_fin,
+            "daily": ["temperature_2m_mean", "relative_humidity_2m_mean", "precipitation_sum", "wind_speed_10m_max"],
+            "timezone": "auto"
+        }
+
+        try:
+            respuesta = requests.get(url, params=parametros)
+            if respuesta.status_code == 200:
+                res = respuesta.json()["daily"]
+                lista_historicos = []
+                
+                fechas = res["time"]
+                temps = res["temperature_2m_mean"]
+                humedades = res["relative_humidity_2m_mean"]
+                precips = res["precipitation_sum"]
+                vientos = res["wind_speed_10m_max"]
+
+                for i in range(len(fechas)):
+                    fecha = fechas[i]
+                    temperatura = temps[i]
+                    humedad = humedades[i]
+                    precipitacion = precips[i]
+                    velocidad_viento = vientos[i]
+
+                    obj_hist = ClimaHistorico(fecha, temperatura, humedad, precipitacion, velocidad_viento)
+                    lista_historicos.append(obj_hist)
+
+                return lista_historicos
+            else:
+                print(f"\nError al obtener históricos. Código HTTP: {respuesta.status_code}")
+                return None
+        except Exception as error:
+            print(f"\nError al conectar con la API de archivo: {error}")
+            return None
