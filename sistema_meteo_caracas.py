@@ -206,3 +206,136 @@ class SistemaMeteoCaracas:
             print("Opción inválida. Debe ingresar un número entero válido.")
 
         return municipio_seleccionado.nombre, lista_localidades_validas[indice_localidad]
+
+    def consultar_por_municipio(self):
+            """Permite interactuar con el menú para seleccionar un municipio y una de sus localidades válidas. 
+            Una vez elegida la localidad, obtiene sus datos meteorológicos en tiempo real mediante la API y lo imprime en pantalla.
+            """
+            resultado = self.seleccionar_localidad_menu()
+            if resultado is None:
+                return
+    
+            municipio_nombre, localidad_seleccionada = resultado
+    
+            print(f"\nConsultando clima para {localidad_seleccionada.nombre}...")
+            clima = self.consultar_clima_api(localidad_seleccionada)
+            self.mostrar_detalle_clima(municipio_nombre, localidad_seleccionada, clima)
+    
+    def consultar_por_busqueda_directa(self):
+        """Filtra y busca localidades por coincidencia en el nombre y muestra su clima actual."""
+        texto_busqueda = input("\nIngrese el nombre (o parte del nombre) de la localidad: ").strip().lower()
+
+        if texto_busqueda == "":
+            print("No ingresó ningún texto.")
+            return
+
+        lista_coincidencias = []
+
+        for municipio in self.lista_municipios:
+            for localidad in municipio.localidades:
+                if texto_busqueda in localidad.nombre.lower() and localidad.tiene_coordenadas():
+                    lista_coincidencias.append((municipio.nombre, localidad))
+
+        if len(lista_coincidencias) == 0:
+            print(f"\nNo se encontraron localidades válidas que coincidan con \"{texto_busqueda}\".")
+            return
+
+        print(f"\n\t=== RESULTADOS DE LA BÚSQUEDA ===")
+        posicion = 1
+        for item in lista_coincidencias:
+            municipio_nombre = item[0]
+            localidad_objeto = item[1]
+            print(f"{posicion}. {localidad_objeto.nombre} (Municipio: {municipio_nombre})")
+            posicion += 1
+
+        try:
+            opcion = int(input("\nSeleccione el número de la localidad deseada: "))
+            indice = opcion - 1
+
+            if indice < 0 or indice >= len(lista_coincidencias):
+                print("Número fuera de rango.")
+                return
+        except ValueError:
+            print("Opción inválida. Debe ingresar un número entero válido.")
+            return
+
+        municipio_seleccionado, localidad_seleccionada = lista_coincidencias[indice]
+
+        clima = self.consultar_clima_api(localidad_seleccionada)
+        self.mostrar_detalle_clima(municipio_seleccionado, localidad_seleccionada, clima)
+
+    def ejecutar_menu_consulta_tiempo_real(self):
+        """Despliega un submenú interactivo para consultar el clima en tiempo real por municipio o búsqueda directa."""
+        while True:
+            try:
+                print("\n\t=== ¿CÓMO DESEA CONSULTAR EL CLIMA? ===")
+                print("1. Por Municipio y Localidad")
+                print("2. Por Búsqueda Directa (Nombre)")
+                print("3. Volver al menú principal")
+
+                sub_opcion = int(input("\nElija una opción (1-3): "))
+
+                if sub_opcion == 1:
+                    self.consultar_por_municipio()
+                elif sub_opcion == 2:
+                    self.consultar_por_busqueda_directa()
+                elif sub_opcion == 3:
+                    break
+                else:
+                    print("\nOpción no válida.")
+
+            except Exception as error:
+                print(f"\nEntrada o proceso inválido: {error}")
+
+    def mostrar_ranking_temperatura(self):
+        """Muestra la localidad más cálida y más fría consultadas en la sesión."""
+        if len(self.lista_historial_consultas) == 0:
+            print("\nAún no se ha realizado ninguna consulta en esta sesión.")
+            return
+
+        localidad_mas_calida = self.lista_historial_consultas[0]
+        localidad_mas_fria = self.lista_historial_consultas[0]
+
+        for consulta in self.lista_historial_consultas:
+            if consulta.temperatura > localidad_mas_calida.temperatura:
+                localidad_mas_calida = consulta
+            
+            if consulta.temperatura < localidad_mas_fria.temperatura:
+                localidad_mas_fria = consulta
+
+        print("\n\t=== RANKING DE TEMPERATURA ===")
+        print(f"Localidad más cálida: {localidad_mas_calida.localidad_nombre} ({localidad_mas_calida.municipio_nombre}) con {localidad_mas_calida.temperatura} °C")
+        print(f"Localidad más fría: {localidad_mas_fria.localidad_nombre} ({localidad_mas_fria.municipio_nombre}) con {localidad_mas_fria.temperatura} °C")
+
+    def mostrar_cobertura_geografica(self):
+            """Muestra las localidades sin coordenadas agrupadas por municipio."""
+            print("\n\t=== COBERTURA GEOGRÁFICA (LOCALIDADES SIN COORDENADAS) ===")
+            
+            for municipio in self.lista_municipios:
+                print(f"\nMunicipio: {municipio.nombre}")
+                contador_sin_coordenadas = 0
+                
+                for localidad in municipio.localidades:
+                    if not localidad.tiene_coordenadas():
+                        print(f" - {localidad.nombre}")
+                        contador_sin_coordenadas += 1
+                
+                if contador_sin_coordenadas == 0:
+                    print("Todas las localidades tienen coordenadas registradas")
+    
+    def mostrar_promedio_general(self):
+        """Calcula y muestra el promedio de temperatura de las localidades consultadas utilizando un arreglo NumPy."""
+        if len(self.lista_historial_consultas) == 0:
+            print("\nAún no se ha realizado ninguna consulta en esta sesión.")
+            return
+
+        lista_temperaturas = []
+        for consulta in self.lista_historial_consultas:
+            lista_temperaturas.append(consulta.temperatura)
+
+        array_temperaturas = np.array(lista_temperaturas)
+        promedio = np.mean(array_temperaturas)
+
+        print("\n\t=== PROMEDIO GENERAL DE LA SESIÓN ===")
+        print(f"Total de consultas realizadas: {len(lista_temperaturas)}")
+        print(f"Promedio de temperatura: {promedio:.2f} °C")
