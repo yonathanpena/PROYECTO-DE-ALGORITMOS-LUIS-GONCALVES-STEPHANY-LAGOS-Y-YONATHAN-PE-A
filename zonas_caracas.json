@@ -1,0 +1,1607 @@
+{
+    "Chacao": [
+        {
+            "localidad": "Altamira",
+            "latitud": -3.20333,
+            "longitud": -52.20639
+        },
+        {
+            "localidad": "Los Palos Grandes",
+            "latitud": 10.50105,
+            "longitud": -66.84506
+        },
+        {
+            "localidad": "La Castellana",
+            "latitud": 10.3239,
+            "longitud": 123.0215
+        },
+        {
+            "localidad": "Campo Alegre",
+            "latitud": -9.78194,
+            "longitud": -36.35083
+        },
+        {
+            "localidad": "El Rosal",
+            "latitud": 4.85314,
+            "longitud": -74.25996
+        },
+        {
+            "localidad": "Country Club",
+            "latitud": 25.94815,
+            "longitud": -80.317
+        },
+        {
+            "localidad": "Bello Campo",
+            "latitud": 10.49207,
+            "longitud": -66.85216
+        },
+        {
+            "localidad": "San Marino",
+            "latitud": 43.93667,
+            "longitud": 12.44639
+        },
+        {
+            "localidad": "Chacao (Casco Central)",
+            "latitud": 10.49581,
+            "longitud": -66.85367
+        },
+        {
+            "localidad": "La Floresta",
+            "latitud": 41.51667,
+            "longitud": 0.91667
+        },
+        {
+            "localidad": "Urbanización El Retiro",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Pedregal",
+            "latitud": 40.77934,
+            "longitud": -1.57033
+        },
+        {
+            "localidad": "Bucaral",
+            "latitud": 8.77832,
+            "longitud": -64.6176
+        },
+        {
+            "localidad": "La Cruz",
+            "latitud": 8.08202,
+            "longitud": -73.22135
+        },
+        {
+            "localidad": "Pajaritos",
+            "latitud": 22.45688,
+            "longitud": -105.52915
+        },
+        {
+            "localidad": "San José de Chacao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Tangüito",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Estado Leal",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Bosque (Sector Chacao)",
+            "latitud": 17.06247,
+            "longitud": -92.721
+        },
+        {
+            "localidad": "Los Chaguaramos (Chacao)",
+            "latitud": 10.24673,
+            "longitud": -66.12626
+        },
+        {
+            "localidad": "Poblado de Chacao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Mercado de Chacao Norte",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Querencia",
+            "latitud": 20.42194,
+            "longitud": -103.23361
+        }
+    ],
+    "Baruta": [
+        {
+            "localidad": "Las Mercedes",
+            "latitud": 9.11037,
+            "longitud": -66.39607
+        },
+        {
+            "localidad": "Chuao",
+            "latitud": 10.4922,
+            "longitud": -67.528
+        },
+        {
+            "localidad": "Colinas de Bello Monte",
+            "latitud": 10.48334,
+            "longitud": -66.87582
+        },
+        {
+            "localidad": "Bello Monte Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Valle Arriba",
+            "latitud": 14.50887,
+            "longitud": -89.44714
+        },
+        {
+            "localidad": "Colinas de Valle Arriba",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "San Román",
+            "latitud": 41.48131,
+            "longitud": -5.28454
+        },
+        {
+            "localidad": "Santa Rosa de Lima",
+            "latitud": 14.38806,
+            "longitud": -90.29556
+        },
+        {
+            "localidad": "Caurimare",
+            "latitud": 10.47371,
+            "longitud": -66.83458
+        },
+        {
+            "localidad": "El Cafetal",
+            "latitud": 10.46541,
+            "longitud": -66.82951
+        },
+        {
+            "localidad": "San Luis",
+            "latitud": 22.15234,
+            "longitud": -100.97135
+        },
+        {
+            "localidad": "Santa Sofía",
+            "latitud": 5.70908,
+            "longitud": -73.60404
+        },
+        {
+            "localidad": "Santa Paula",
+            "latitud": 34.35417,
+            "longitud": -119.05927
+        },
+        {
+            "localidad": "Santa Inés",
+            "latitud": 42.04013,
+            "longitud": -3.70322
+        },
+        {
+            "localidad": "Santa Fe Norte",
+            "latitud": 25.72528,
+            "longitud": -100.33431
+        },
+        {
+            "localidad": "Santa Fe Sur",
+            "latitud": 16.3105,
+            "longitud": 120.3848
+        },
+        {
+            "localidad": "Alto Prado",
+            "latitud": 3.70194,
+            "longitud": -76.16028
+        },
+        {
+            "localidad": "Prados del Este",
+            "latitud": 10.44793,
+            "longitud": -66.88515
+        },
+        {
+            "localidad": "Terrazas del Club Hípico",
+            "latitud": 10.44774,
+            "longitud": -66.87131
+        },
+        {
+            "localidad": "Club Hípico",
+            "latitud": 21.11288,
+            "longitud": -101.61168
+        },
+        {
+            "localidad": "Los Campitos",
+            "latitud": 28.48295,
+            "longitud": -16.26371
+        },
+        {
+            "localidad": "Mirador de Los Campitos",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Bonita",
+            "latitud": 8.61903,
+            "longitud": -82.76392
+        },
+        {
+            "localidad": "Monterrey",
+            "latitud": 25.68435,
+            "longitud": -100.31721
+        },
+        {
+            "localidad": "Los Samanes",
+            "latitud": 9.25978,
+            "longitud": -65.46588
+        },
+        {
+            "localidad": "La Trinidad",
+            "latitud": 16.455,
+            "longitud": 120.5875
+        },
+        {
+            "localidad": "Sorocaima",
+            "latitud": 10.4327,
+            "longitud": -66.8586
+        },
+        {
+            "localidad": "La Tahona",
+            "latitud": 27.8692,
+            "longitud": -108.18793
+        },
+        {
+            "localidad": "Lomas de La Tahona",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Parque Humboldt",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Las Minitas",
+            "latitud": 19.07917,
+            "longitud": -102.01306
+        },
+        {
+            "localidad": "Oripoto (Baruta)",
+            "latitud": 10.41806,
+            "longitud": -66.83803
+        },
+        {
+            "localidad": "Piedra Azul",
+            "latitud": 22.69395,
+            "longitud": -100.99008
+        },
+        {
+            "localidad": "Charallavito",
+            "latitud": 10.43994,
+            "longitud": -66.87284
+        },
+        {
+            "localidad": "La Citadel",
+            "latitud": 14.49585,
+            "longitud": -60.99472
+        },
+        {
+            "localidad": "Las Mesetas",
+            "latitud": 19.32205,
+            "longitud": -70.78054
+        },
+        {
+            "localidad": "El Placer",
+            "latitud": 15.95389,
+            "longitud": -93.06028
+        },
+        {
+            "localidad": "Lomas del Sol",
+            "latitud": 19.42306,
+            "longitud": -100.3825
+        },
+        {
+            "localidad": "Lomas de Prados del Este",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas de San Román",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de Santa Inés",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de Santa Fe",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de San Román",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Manzanares",
+            "latitud": 38.99915,
+            "longitud": -3.36991
+        },
+        {
+            "localidad": "Terrazas de Manzanares",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Alto Manzanares",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas de Las Mercedes",
+            "latitud": 10.47913,
+            "longitud": -66.85351
+        },
+        {
+            "localidad": "Guaicay",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Naranjos de Las Mercedes",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Las Minitas de Baruta",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Ojo de Agua",
+            "latitud": 19.68028,
+            "longitud": -99.01
+        },
+        {
+            "localidad": "La Palomera",
+            "latitud": 2.95681,
+            "longitud": -76.42672
+        },
+        {
+            "localidad": "La Guairita",
+            "latitud": 10.27948,
+            "longitud": -66.04264
+        },
+        {
+            "localidad": "Hoyo de la Puerta",
+            "latitud": 10.39102,
+            "longitud": -66.89201
+        },
+        {
+            "localidad": "Monte Alto",
+            "latitud": 37.65424,
+            "longitud": -4.91609
+        },
+        {
+            "localidad": "El Milagro",
+            "latitud": -31.00831,
+            "longitud": -65.99103
+        },
+        {
+            "localidad": "El Rosario de Baruta",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Asunción",
+            "latitud": 11.03333,
+            "longitud": -63.86278
+        },
+        {
+            "localidad": "Paso Real",
+            "latitud": 22.06108,
+            "longitud": -98.17432
+        },
+        {
+            "localidad": "Pueblo de Baruta",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Santa Inés Norte",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Santa Inés Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Colinas de La Trinidad",
+            "latitud": 10.44083,
+            "longitud": -66.86353
+        },
+        {
+            "localidad": "Las Mercedes Este",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Guayabitos",
+            "latitud": 19.15167,
+            "longitud": -101.33389
+        },
+        {
+            "localidad": "Sartanejas",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Montepino",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Loma",
+            "latitud": 6.55645,
+            "longitud": -76.88389
+        },
+        {
+            "localidad": "Parque Santa Fe",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Colinas del Tamanaco",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Vizcaya",
+            "latitud": 25.57947,
+            "longitud": -103.21408
+        },
+        {
+            "localidad": "Los Ruices (Sector Baruta)",
+            "latitud": 39.46667,
+            "longitud": -1.25
+        },
+        {
+            "localidad": "Los Naranjos del Cafetal",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas del Mirador",
+            "latitud": 20.82667,
+            "longitud": -100.47472
+        },
+        {
+            "localidad": "Lomas de Chuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Peñón",
+            "latitud": 8.98885,
+            "longitud": -73.94898
+        },
+        {
+            "localidad": "Terrazas del Peñón",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Escampadero",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Bosque de In VIP",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas de Prados",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Alameda",
+            "latitud": 38.60918,
+            "longitud": -3.87596
+        },
+        {
+            "localidad": "Colinas de Santa Fe",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Sector El Placer",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de In VIP",
+            "latitud": null,
+            "longitud": null
+        }
+    ],
+    "El_Hatillo": [
+        {
+            "localidad": "Pueblo de El Hatillo",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Lagunita Country Club",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Lagunita",
+            "latitud": 21.24722,
+            "longitud": -99.25917
+        },
+        {
+            "localidad": "Lomas de La Lagunita",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Naranjos del Hatillo",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas de Los Naranjos",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Cerro Verde",
+            "latitud": -16.45026,
+            "longitud": -71.61552
+        },
+        {
+            "localidad": "Los Geranios",
+            "latitud": 4.30722,
+            "longitud": -75.04139
+        },
+        {
+            "localidad": "El Cigarral",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Boyera",
+            "latitud": 18.72917,
+            "longitud": -95.79028
+        },
+        {
+            "localidad": "El Portón de La Boyera",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Encantado",
+            "latitud": 18.855,
+            "longitud": -96.32611
+        },
+        {
+            "localidad": "Lomas del Encantado",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Naranjos de Humboldt",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Alto Hatillo",
+            "latitud": 10.43228,
+            "longitud": -66.82458
+        },
+        {
+            "localidad": "El Arroyo",
+            "latitud": 27.99944,
+            "longitud": -110.9004
+        },
+        {
+            "localidad": "La Mairana",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Unión",
+            "latitud": 14.96437,
+            "longitud": -91.79486
+        },
+        {
+            "localidad": "Lomas de La Unión",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Naranjos de San Antonio",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Oripoto",
+            "latitud": 10.41806,
+            "longitud": -66.83803
+        },
+        {
+            "localidad": "Tusmare",
+            "latitud": 10.40556,
+            "longitud": -66.78333
+        },
+        {
+            "localidad": "El Volcán",
+            "latitud": 15.39927,
+            "longitud": -92.22839
+        },
+        {
+            "localidad": "Corralito",
+            "latitud": -32.02369,
+            "longitud": -64.19201
+        },
+        {
+            "localidad": "Caicaguana",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Placer de María",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Cabaña",
+            "latitud": 43.31667,
+            "longitud": -6.18333
+        },
+        {
+            "localidad": "Los Pomelos",
+            "latitud": 10.45292,
+            "longitud": -66.82671
+        },
+        {
+            "localidad": "El Calero",
+            "latitud": 20.69972,
+            "longitud": -100.35111
+        },
+        {
+            "localidad": "Sabaneta",
+            "latitud": 8.75234,
+            "longitud": -69.93351
+        },
+        {
+            "localidad": "Guanaguanare",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Estrella",
+            "latitud": 6.15769,
+            "longitud": -75.64317
+        },
+        {
+            "localidad": "Los Naranjos Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Hatillo Este",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de La Boyera",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de El Cigarral",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Solar del Hatillo",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Bosques de La Lagunita",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas de San Antonio",
+            "latitud": 19.30502,
+            "longitud": -98.42494
+        },
+        {
+            "localidad": "Altos de El Hatillo",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Gavilán",
+            "latitud": 22.523,
+            "longitud": -100.04163
+        },
+        {
+            "localidad": "El Manzanillo",
+            "latitud": 16.65083,
+            "longitud": -92.63972
+        },
+        {
+            "localidad": "La Guairita (El Hatillo)",
+            "latitud": 10.27948,
+            "longitud": -66.04264
+        },
+        {
+            "localidad": "La Suiza",
+            "latitud": 9.85065,
+            "longitud": -83.6169
+        },
+        {
+            "localidad": "Piamonte",
+            "latitud": 1.12002,
+            "longitud": -76.32131
+        },
+        {
+            "localidad": "Loma Larga",
+            "latitud": 19.6275,
+            "longitud": -99.34611
+        },
+        {
+            "localidad": "El Topo",
+            "latitud": 10.52222,
+            "longitud": -67.08333
+        },
+        {
+            "localidad": "La Mata",
+            "latitud": 40.55779,
+            "longitud": -3.89173
+        },
+        {
+            "localidad": "San Jerónimo",
+            "latitud": 6.44344,
+            "longitud": -75.72815
+        },
+        {
+            "localidad": "Altos de Halcón",
+            "latitud": null,
+            "longitud": null
+        }
+    ],
+    "Sucre": [
+        {
+            "localidad": "Los Dos Caminos",
+            "latitud": 10.49389,
+            "longitud": -66.82863
+        },
+        {
+            "localidad": "Sebucán",
+            "latitud": 6.9,
+            "longitud": -61.2
+        },
+        {
+            "localidad": "Los Chorros",
+            "latitud": 17.07806,
+            "longitud": -92.42833
+        },
+        {
+            "localidad": "Santa Eduvigis",
+            "latitud": 7.96611,
+            "longitud": -67.65389
+        },
+        {
+            "localidad": "Montecristo",
+            "latitud": 17.74058,
+            "longitud": -91.76635
+        },
+        {
+            "localidad": "Horizonte",
+            "latitud": -4.09802,
+            "longitud": -38.486
+        },
+        {
+            "localidad": "El Marqués Norte",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Marqués Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Boleíta Norte",
+            "latitud": 10.49896,
+            "longitud": -66.81923
+        },
+        {
+            "localidad": "Boleíta Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Urbina",
+            "latitud": 39.16931,
+            "longitud": -2.76952
+        },
+        {
+            "localidad": "Terrazas del Ávila",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Palo Verde",
+            "latitud": 33.43281,
+            "longitud": -114.73218
+        },
+        {
+            "localidad": "Lomas del Ávila",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Parque Caiza",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Campo Rico",
+            "latitud": 18.33717,
+            "longitud": -65.89794
+        },
+        {
+            "localidad": "La California Norte",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La California Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La California Este",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Colinas de La California",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Macaracuay",
+            "latitud": 10.46659,
+            "longitud": -66.81537
+        },
+        {
+            "localidad": "Los Ruices",
+            "latitud": 39.46667,
+            "longitud": -1.25
+        },
+        {
+            "localidad": "Los Ruices Sur",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Cortijos de Lourdes",
+            "latitud": 10.48475,
+            "longitud": -66.82712
+        },
+        {
+            "localidad": "Los Cortijos Arriba",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Petare (Casco Histórico)",
+            "latitud": 10.47679,
+            "longitud": -66.80786
+        },
+        {
+            "localidad": "Barrio Unión",
+            "latitud": -39.15991,
+            "longitud": -66.19065
+        },
+        {
+            "localidad": "El Cerrito",
+            "latitud": 3.68549,
+            "longitud": -76.31372
+        },
+        {
+            "localidad": "La Alcabala",
+            "latitud": 10.18333,
+            "longitud": -70.28333
+        },
+        {
+            "localidad": "El Campito",
+            "latitud": 14.67637,
+            "longitud": -92.17499
+        },
+        {
+            "localidad": "José Félix Ribas",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "San Antonio de Petare",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Carpintero",
+            "latitud": 20.58606,
+            "longitud": -98.53964
+        },
+        {
+            "localidad": "19 de Abril",
+            "latitud": 14.80694,
+            "longitud": -92.49833
+        },
+        {
+            "localidad": "Mesuca",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Nazareno",
+            "latitud": -21.21639,
+            "longitud": -44.61139
+        },
+        {
+            "localidad": "Barrio Sucre",
+            "latitud": 10.14975,
+            "longitud": -64.67147
+        },
+        {
+            "localidad": "La Lucha",
+            "latitud": 18.18139,
+            "longitud": -93.32265
+        },
+        {
+            "localidad": "Filas de Mariches",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Paulo VI",
+            "latitud": 14.64147,
+            "longitud": -90.59305
+        },
+        {
+            "localidad": "El Llanito",
+            "latitud": 21.12143,
+            "longitud": -100.9511
+        },
+        {
+            "localidad": "Colinas de El Llanito",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lebrún",
+            "latitud": 18.43225,
+            "longitud": -73.15624
+        },
+        {
+            "localidad": "Turumo",
+            "latitud": 36.6969,
+            "longitud": 126.7532
+        },
+        {
+            "localidad": "Guaicoco",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Siria",
+            "latitud": 17.19333,
+            "longitud": -91.69306
+        },
+        {
+            "localidad": "San José de Ávila",
+            "latitud": 20.0671,
+            "longitud": -104.22373
+        },
+        {
+            "localidad": "San Miguel",
+            "latitud": 9.05032,
+            "longitud": -79.47068
+        },
+        {
+            "localidad": "La Guairita (Sucre)",
+            "latitud": 10.27948,
+            "longitud": -66.04264
+        },
+        {
+            "localidad": "Bicentenario",
+            "latitud": 26.08062,
+            "longitud": -99.59439
+        },
+        {
+            "localidad": "Miravila",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Terrazas de Turumo",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Valle Fresco",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Km 12 Mariches",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Caucagüita",
+            "latitud": 10.48666,
+            "longitud": -66.73799
+        },
+        {
+            "localidad": "Terrazas de Caucagüita",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Parque Caiza II",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Colinas de Los Ruices",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Barrio El Carmen",
+            "latitud": -0.41629,
+            "longitud": -77.84322
+        },
+        {
+            "localidad": "Barrio Fe y Alegría",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Barrio Bolívar",
+            "latitud": 10.63062,
+            "longitud": -71.66757
+        },
+        {
+            "localidad": "El Encantado (Sucre)",
+            "latitud": 18.855,
+            "longitud": -96.32611
+        },
+        {
+            "localidad": "San Gonzalo",
+            "latitud": 20.88728,
+            "longitud": -101.57112
+        },
+        {
+            "localidad": "San Rafael",
+            "latitud": -34.61531,
+            "longitud": -68.33238
+        },
+        {
+            "localidad": "La Machaca",
+            "latitud": 26.28442,
+            "longitud": -111.88408
+        },
+        {
+            "localidad": "La Dolorita",
+            "latitud": 10.4883,
+            "longitud": -66.78608
+        },
+        {
+            "localidad": "Terrazas de La Dolorita",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Lomas de Boleíta",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Zona Industrial Boleíta",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Zona Industrial Los Ruices",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Zona Industrial Lebrún",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Sector El Morro",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Sector San Antonio",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Barrio La Cruz (Sucre)",
+            "latitud": 21.52028,
+            "longitud": -99.05556
+        }
+    ],
+    "Libertador": [
+        {
+            "localidad": "El Paraíso",
+            "latitud": -0.22615,
+            "longitud": -76.84804
+        },
+        {
+            "localidad": "Montalbán I",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Montalbán II",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Montalbán III",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Colinas de Vista Alegre",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Vista Alegre",
+            "latitud": 8.92923,
+            "longitud": -79.69964
+        },
+        {
+            "localidad": "Bella Vista",
+            "latitud": 18.45539,
+            "longitud": -69.9454
+        },
+        {
+            "localidad": "La Yaguara",
+            "latitud": 10.40002,
+            "longitud": -68.65263
+        },
+        {
+            "localidad": "Caricuao",
+            "latitud": 10.43337,
+            "longitud": -66.98313
+        },
+        {
+            "localidad": "UD1 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "UD2 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "UD3 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "UD4 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "UD5 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "UD6 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "UD7 Caricuao",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Ruiz Pineda",
+            "latitud": 10.43624,
+            "longitud": -66.99384
+        },
+        {
+            "localidad": "Macarao",
+            "latitud": 11.8,
+            "longitud": -71.36667
+        },
+        {
+            "localidad": "Antímano",
+            "latitud": 10.4627,
+            "longitud": -66.98397
+        },
+        {
+            "localidad": "La Vega",
+            "latitud": 19.22031,
+            "longitud": -70.53101
+        },
+        {
+            "localidad": "Los Naranjos (La Vega)",
+            "latitud": 8.79419,
+            "longitud": -82.44557
+        },
+        {
+            "localidad": "Terrazas de La Vega",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "San Martín",
+            "latitud": -5.18591,
+            "longitud": -80.66927
+        },
+        {
+            "localidad": "Artigas",
+            "latitud": -30.40431,
+            "longitud": -56.46926
+        },
+        {
+            "localidad": "Guarataro",
+            "latitud": 10.36608,
+            "longitud": -68.52598
+        },
+        {
+            "localidad": "Capuchinos",
+            "latitud": 8.28944,
+            "longitud": -69.42667
+        },
+        {
+            "localidad": "El Silencio",
+            "latitud": 9.38557,
+            "longitud": -82.53365
+        },
+        {
+            "localidad": "El Calvario",
+            "latitud": 4.35342,
+            "longitud": -73.71147
+        },
+        {
+            "localidad": "Caño Amarillo",
+            "latitud": 9.97475,
+            "longitud": -65.3442
+        },
+        {
+            "localidad": "23 de Enero",
+            "latitud": 15.17938,
+            "longitud": -92.54475
+        },
+        {
+            "localidad": "Catia",
+            "latitud": -12.75,
+            "longitud": 37.98333
+        },
+        {
+            "localidad": "Propatria",
+            "latitud": 10.50419,
+            "longitud": -66.95751
+        },
+        {
+            "localidad": "Los Magallanes de Catia",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Pérez Bonalde",
+            "latitud": 10.50893,
+            "longitud": -66.94765
+        },
+        {
+            "localidad": "Gramoven",
+            "latitud": 10.52193,
+            "longitud": -66.95222
+        },
+        {
+            "localidad": "Blandín",
+            "latitud": 45.47,
+            "longitud": 5.44788
+        },
+        {
+            "localidad": "Lomas de Urdaneta",
+            "latitud": 10.51266,
+            "longitud": -66.95473
+        },
+        {
+            "localidad": "Casalta 1",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Casalta 2",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Casalta 3",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Agua Salud",
+            "latitud": 10.26954,
+            "longitud": -66.09053
+        },
+        {
+            "localidad": "Manicomio",
+            "latitud": 10.52196,
+            "longitud": -66.93109
+        },
+        {
+            "localidad": "La Pastora",
+            "latitud": 21.06889,
+            "longitud": -98.52861
+        },
+        {
+            "localidad": "Puerta Caracas",
+            "latitud": 10.52457,
+            "longitud": -66.93448
+        },
+        {
+            "localidad": "Lomas del Pinar",
+            "latitud": 9.94596,
+            "longitud": -84.08752
+        },
+        {
+            "localidad": "Altagracia",
+            "latitud": 11.56615,
+            "longitud": -85.5784
+        },
+        {
+            "localidad": "San José",
+            "latitud": 37.33939,
+            "longitud": -121.89496
+        },
+        {
+            "localidad": "Cotiza",
+            "latitud": 9.31667,
+            "longitud": -70.65
+        },
+        {
+            "localidad": "San Bernardino",
+            "latitud": 34.10834,
+            "longitud": -117.28977
+        },
+        {
+            "localidad": "Lomas de San Bernardino",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Candelaria",
+            "latitud": -26.12734,
+            "longitud": -65.05132
+        },
+        {
+            "localidad": "Guaicaipuro",
+            "latitud": 10.50508,
+            "longitud": -66.89466
+        },
+        {
+            "localidad": "Los Anaucos",
+            "latitud": 10.3054,
+            "longitud": -66.86806
+        },
+        {
+            "localidad": "San Agustín del Norte",
+            "latitud": 10.49717,
+            "longitud": -66.90771
+        },
+        {
+            "localidad": "San Agustín del Sur",
+            "latitud": 10.49404,
+            "longitud": -66.9079
+        },
+        {
+            "localidad": "Parque Central",
+            "latitud": 18.43995,
+            "longitud": -66.07822
+        },
+        {
+            "localidad": "Bellas Artes",
+            "latitud": 22.35056,
+            "longitud": -103.23111
+        },
+        {
+            "localidad": "Los Caobos",
+            "latitud": 9.19472,
+            "longitud": -64.93434
+        },
+        {
+            "localidad": "Sabana Grande",
+            "latitud": 18.07774,
+            "longitud": -66.96045
+        },
+        {
+            "localidad": "Las Delicias de Sabana Grande",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "La Campiña",
+            "latitud": 10.71667,
+            "longitud": -74.88333
+        },
+        {
+            "localidad": "El Recreo",
+            "latitud": 18.28058,
+            "longitud": -93.09285
+        },
+        {
+            "localidad": "San Antonio de Sabana Grande",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Maripérez",
+            "latitud": 10.51637,
+            "longitud": -66.87113
+        },
+        {
+            "localidad": "Los Chaguaramos",
+            "latitud": 10.24673,
+            "longitud": -66.12626
+        },
+        {
+            "localidad": "Valle Abajo",
+            "latitud": 9.4835,
+            "longitud": -70.32151
+        },
+        {
+            "localidad": "Ciudad Universitaria",
+            "latitud": -26.78333,
+            "longitud": -65.35
+        },
+        {
+            "localidad": "Santa Mónica",
+            "latitud": 34.01949,
+            "longitud": -118.49138
+        },
+        {
+            "localidad": "Colinas de Santa Mónica",
+            "latitud": 10.47111,
+            "longitud": -66.88635
+        },
+        {
+            "localidad": "San Pedro",
+            "latitud": 15.50585,
+            "longitud": -88.02588
+        },
+        {
+            "localidad": "Los Ilustres",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "Los Rosales",
+            "latitud": 37.79151,
+            "longitud": -3.08409
+        },
+        {
+            "localidad": "Prado de María",
+            "latitud": 10.48239,
+            "longitud": -66.90844
+        },
+        {
+            "localidad": "El Cementerio",
+            "latitud": 14.88333,
+            "longitud": -91.76667
+        },
+        {
+            "localidad": "Coche",
+            "latitud": -18.70139,
+            "longitud": 34.33528
+        },
+        {
+            "localidad": "Cochecito",
+            "latitud": 10.44465,
+            "longitud": -66.93243
+        },
+        {
+            "localidad": "Delgado Chalbaud",
+            "latitud": 10.44794,
+            "longitud": -66.93095
+        },
+        {
+            "localidad": "La Rinconada",
+            "latitud": 37.48613,
+            "longitud": -5.98091
+        },
+        {
+            "localidad": "Ciudad Tiuna",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "El Valle",
+            "latitud": 18.21704,
+            "longitud": -63.05783
+        },
+        {
+            "localidad": "San Antonio (El Valle)",
+            "latitud": 29.42412,
+            "longitud": -98.49363
+        },
+        {
+            "localidad": "Los Jardines del Valle",
+            "latitud": 10.45776,
+            "longitud": -66.91771
+        },
+        {
+            "localidad": "Longaray",
+            "latitud": 10.46299,
+            "longitud": -66.90883
+        },
+        {
+            "localidad": "Quinta Crespo",
+            "latitud": 10.49343,
+            "longitud": -66.91892
+        },
+        {
+            "localidad": "Puente Hierro",
+            "latitud": 8.03124,
+            "longitud": -76.67661
+        },
+        {
+            "localidad": "Roca Tarpeya",
+            "latitud": null,
+            "longitud": null
+        },
+        {
+            "localidad": "San Juan",
+            "latitud": 18.46633,
+            "longitud": -66.10572
+        },
+        {
+            "localidad": "Santa Teresa",
+            "latitud": 10.23291,
+            "longitud": -66.66474
+        }
+    ]
+}

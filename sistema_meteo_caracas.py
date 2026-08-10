@@ -92,47 +92,47 @@ class SistemaMeteoCaracas:
             return None
 
     def obtener_descripcion_clima(self, codigo):
-        """Traduce el código numérico de estado del tiempo otorgado por la API a una descripción textual comprensible por el usuario."""
-        
-        tabla_codigos = [
-            [0, "Cielo despejado"],
-            [1, "Principalmente despejado"],
-            [2, "Parcialmente nublado"],
-            [3, "Nublado"],
-            [45, "Niebla"],
-            [48, "Niebla con escarcha"],
-            [51, "Llovizna ligera"],
-            [53, "Llovizna moderada"],
-            [55, "Llovizna intensa"],
-            [56, "Llovizna helada ligera"],
-            [57, "Llovizna helada intensa"],
-            [61, "Lluvia leve"],
-            [63, "Lluvia moderada"],
-            [65, "Lluvia fuerte"],
-            [66, "Lluvia helada leve"],
-            [67, "Lluvia helada fuerte"],
-            [71, "Nevada leve"],
-            [73, "Nevada moderada"],
-            [75, "Nevada fuerte"],
-            [77, "Granos de nieve"],
-            [80, "Lluvia leve"],
-            [81, "Lluvia moderada"],
-            [82, "Lluvia violenta"],
-            [85, "Lluvia de nieve leve"],
-            [86, "Lluvia de nieve fuerte"],
-            [95, "Tormenta eléctrica leve o moderada"],
-            [96, "Tormenta eléctrica con granizo ligero"],
-            [99, "Tormenta eléctrica con granizo fuerte"]
-        ]
-
-        for elemento in tabla_codigos:
-            numero = elemento[0]
-            descripcion = elemento[1]
-            
-            if codigo == numero:
-                return descripcion
-
-        return "Estado del tiempo no especificado"   
+            """Traduce el código numérico de estado del tiempo otorgado por la API a una descripción textual comprensible por el usuario."""
+          
+            tabla_codigos = [
+                [0, "Cielo despejado"],
+                [1, "Principalmente despejado"],
+                [2, "Parcialmente nublado"],
+                [3, "Nublado"],
+                [45, "Niebla"],
+                [48, "Niebla con escarcha"],
+                [51, "Llovizna ligera"],
+                [53, "Llovizna moderada"],
+                [55, "Llovizna intensa"],
+                [56, "Llovizna helada ligera"],
+                [57, "Llovizna helada intensa"],
+                [61, "Lluvia leve"],
+                [63, "Lluvia moderada"],
+                [65, "Lluvia fuerte"],
+                [66, "Lluvia helada leve"],
+                [67, "Lluvia helada fuerte"],
+                [71, "Nevada leve"],
+                [73, "Nevada moderada"],
+                [75, "Nevada fuerte"],
+                [77, "Granos de nieve"],
+                [80, "Lluvia leve"],
+                [81, "Lluvia moderada"],
+                [82, "Lluvia violenta"],
+                [85, "Lluvia de nieve leve"],
+                [86, "Lluvia de nieve fuerte"],
+                [95, "Tormenta eléctrica leve o moderada"],
+                [96, "Tormenta eléctrica con granizo ligero"],
+                [99, "Tormenta eléctrica con granizo fuerte"]
+            ]
+    
+            for elemento in tabla_codigos:
+                numero = elemento[0]
+                descripcion = elemento[1]
+                
+                if codigo == numero:
+                    return descripcion
+    
+            return "Estado del tiempo no especificado"   
     
     def registrar_consulta(self, municipio_nombre, localidad_nombre, temperatura):
         """Guarda un registro de la consulta en la lista_historial_consultas de la sesión mediante un objeto ConsultaHistorial."""
@@ -208,18 +208,18 @@ class SistemaMeteoCaracas:
         return municipio_seleccionado.nombre, lista_localidades_validas[indice_localidad]
 
     def consultar_por_municipio(self):
-        """Permite interactuar con el menú para seleccionar un municipio y una de sus localidades válidas. 
-        Una vez elegida la localidad, obtiene sus datos meteorológicos en tiempo real mediante la API y lo imprime en pantalla.
-        """
-        resultado = self.seleccionar_localidad_menu()
-        if resultado is None:
-            return
-
-        municipio_nombre, localidad_seleccionada = resultado
-
-        print(f"\nConsultando clima para {localidad_seleccionada.nombre}...")
-        clima = self.consultar_clima_api(localidad_seleccionada)
-        self.mostrar_detalle_clima(municipio_nombre, localidad_seleccionada, clima)
+            """Permite interactuar con el menú para seleccionar un municipio y una de sus localidades válidas. 
+            Una vez elegida la localidad, obtiene sus datos meteorológicos en tiempo real mediante la API y lo imprime en pantalla.
+            """
+            resultado = self.seleccionar_localidad_menu()
+            if resultado is None:
+                return
+    
+            municipio_nombre, localidad_seleccionada = resultado
+    
+            print(f"\nConsultando clima para {localidad_seleccionada.nombre}...")
+            clima = self.consultar_clima_api(localidad_seleccionada)
+            self.mostrar_detalle_clima(municipio_nombre, localidad_seleccionada, clima)
     
     def consultar_por_busqueda_directa(self):
         """Filtra y busca localidades por coincidencia en el nombre y muestra su clima actual."""
@@ -322,7 +322,7 @@ class SistemaMeteoCaracas:
             
             if contador_sin_coordenadas == 0:
                 print("Todas las localidades tienen coordenadas registradas")
-    
+
     def mostrar_promedio_general(self):
         """Calcula y muestra el promedio de temperatura de las localidades consultadas utilizando un arreglo NumPy."""
         if len(self.lista_historial_consultas) == 0:
@@ -365,7 +365,7 @@ class SistemaMeteoCaracas:
 
             except Exception as error:
                 print(f"\nOcurrió un error inesperado en el módulo de estadísticas: {error}")
-    
+
     def consultar_historico_api(self, localidad, fecha_inicio, fecha_fin):
 
         """Consulta la API de Open-Meteo para obtener variables climáticas históricas en un rango de fechas y las convierte en una lista de objetos ClimaHistorico.
