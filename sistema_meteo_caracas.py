@@ -92,47 +92,47 @@ class SistemaMeteoCaracas:
             return None
 
     def obtener_descripcion_clima(self, codigo):
-            """Traduce el código numérico de estado del tiempo otorgado por la API a una descripción textual comprensible por el usuario."""
-          
-            tabla_codigos = [
-                [0, "Cielo despejado"],
-                [1, "Principalmente despejado"],
-                [2, "Parcialmente nublado"],
-                [3, "Nublado"],
-                [45, "Niebla"],
-                [48, "Niebla con escarcha"],
-                [51, "Llovizna ligera"],
-                [53, "Llovizna moderada"],
-                [55, "Llovizna intensa"],
-                [56, "Llovizna helada ligera"],
-                [57, "Llovizna helada intensa"],
-                [61, "Lluvia leve"],
-                [63, "Lluvia moderada"],
-                [65, "Lluvia fuerte"],
-                [66, "Lluvia helada leve"],
-                [67, "Lluvia helada fuerte"],
-                [71, "Nevada leve"],
-                [73, "Nevada moderada"],
-                [75, "Nevada fuerte"],
-                [77, "Granos de nieve"],
-                [80, "Lluvia leve"],
-                [81, "Lluvia moderada"],
-                [82, "Lluvia violenta"],
-                [85, "Lluvia de nieve leve"],
-                [86, "Lluvia de nieve fuerte"],
-                [95, "Tormenta eléctrica leve o moderada"],
-                [96, "Tormenta eléctrica con granizo ligero"],
-                [99, "Tormenta eléctrica con granizo fuerte"]
-            ]
-    
-            for elemento in tabla_codigos:
-                numero = elemento[0]
-                descripcion = elemento[1]
-                
-                if codigo == numero:
-                    return descripcion
-    
-            return "Estado del tiempo no especificado"   
+        """Traduce el código numérico de estado del tiempo otorgado por la API a una descripción textual comprensible por el usuario."""
+        
+        tabla_codigos = [
+            [0, "Cielo despejado"],
+            [1, "Principalmente despejado"],
+            [2, "Parcialmente nublado"],
+            [3, "Nublado"],
+            [45, "Niebla"],
+            [48, "Niebla con escarcha"],
+            [51, "Llovizna ligera"],
+            [53, "Llovizna moderada"],
+            [55, "Llovizna intensa"],
+            [56, "Llovizna helada ligera"],
+            [57, "Llovizna helada intensa"],
+            [61, "Lluvia leve"],
+            [63, "Lluvia moderada"],
+            [65, "Lluvia fuerte"],
+            [66, "Lluvia helada leve"],
+            [67, "Lluvia helada fuerte"],
+            [71, "Nevada leve"],
+            [73, "Nevada moderada"],
+            [75, "Nevada fuerte"],
+            [77, "Granos de nieve"],
+            [80, "Lluvia leve"],
+            [81, "Lluvia moderada"],
+            [82, "Lluvia violenta"],
+            [85, "Lluvia de nieve leve"],
+            [86, "Lluvia de nieve fuerte"],
+            [95, "Tormenta eléctrica leve o moderada"],
+            [96, "Tormenta eléctrica con granizo ligero"],
+            [99, "Tormenta eléctrica con granizo fuerte"]
+        ]
+
+        for elemento in tabla_codigos:
+            numero = elemento[0]
+            descripcion = elemento[1]
+            
+            if codigo == numero:
+                return descripcion
+
+        return "Estado del tiempo no especificado"   
     
     def registrar_consulta(self, municipio_nombre, localidad_nombre, temperatura):
         """Guarda un registro de la consulta en la lista_historial_consultas de la sesión mediante un objeto ConsultaHistorial."""
@@ -208,18 +208,18 @@ class SistemaMeteoCaracas:
         return municipio_seleccionado.nombre, lista_localidades_validas[indice_localidad]
 
     def consultar_por_municipio(self):
-            """Permite interactuar con el menú para seleccionar un municipio y una de sus localidades válidas. 
-            Una vez elegida la localidad, obtiene sus datos meteorológicos en tiempo real mediante la API y lo imprime en pantalla.
-            """
-            resultado = self.seleccionar_localidad_menu()
-            if resultado is None:
-                return
-    
-            municipio_nombre, localidad_seleccionada = resultado
-    
-            print(f"\nConsultando clima para {localidad_seleccionada.nombre}...")
-            clima = self.consultar_clima_api(localidad_seleccionada)
-            self.mostrar_detalle_clima(municipio_nombre, localidad_seleccionada, clima)
+        """Permite interactuar con el menú para seleccionar un municipio y una de sus localidades válidas. 
+        Una vez elegida la localidad, obtiene sus datos meteorológicos en tiempo real mediante la API y lo imprime en pantalla.
+        """
+        resultado = self.seleccionar_localidad_menu()
+        if resultado is None:
+            return
+
+        municipio_nombre, localidad_seleccionada = resultado
+
+        print(f"\nConsultando clima para {localidad_seleccionada.nombre}...")
+        clima = self.consultar_clima_api(localidad_seleccionada)
+        self.mostrar_detalle_clima(municipio_nombre, localidad_seleccionada, clima)
     
     def consultar_por_busqueda_directa(self):
         """Filtra y busca localidades por coincidencia en el nombre y muestra su clima actual."""
@@ -322,7 +322,7 @@ class SistemaMeteoCaracas:
             
             if contador_sin_coordenadas == 0:
                 print("Todas las localidades tienen coordenadas registradas")
-
+    
     def mostrar_promedio_general(self):
         """Calcula y muestra el promedio de temperatura de las localidades consultadas utilizando un arreglo NumPy."""
         if len(self.lista_historial_consultas) == 0:
@@ -365,7 +365,7 @@ class SistemaMeteoCaracas:
 
             except Exception as error:
                 print(f"\nOcurrió un error inesperado en el módulo de estadísticas: {error}")
-
+    
     def consultar_historico_api(self, localidad, fecha_inicio, fecha_fin):
 
         """Consulta la API de Open-Meteo para obtener variables climáticas históricas en un rango de fechas y las convierte en una lista de objetos ClimaHistorico.
@@ -410,3 +410,118 @@ class SistemaMeteoCaracas:
         except Exception as error:
             print(f"\nError al conectar con la API de archivo: {error}")
             return None
+
+    def procesar_y_mostrar_historico(self):
+    
+        """ Solicita al usuario la localidad y el rango de fechas, realiza la consulta a la API  de datos históricos y procesa la información para:
+
+        1. Mostrar métricas agrupadas mensualmente (temperatura, humedad, precipitación acumulada y viento) 
+            almacenando los objetos en una tabla y aplicando agrupamientos con la librería Pandas.
+        2. Calcular y mostrar los promedios de las variables meteorológicas haciendo uso de la librería NumPy.
+        3. Determinar los años más calurosos, más frescos, con mayor precipitación y mayor humedad utilizando 
+            funciones de agregación e identificación de índices extremos con Pandas.
+        4. Generar y mostrar subgráficos comparativos de la evolución anual de las variables utilizando la librería Matplotlib.
+        """
+
+        resultado = self.seleccionar_localidad_menu()
+        if resultado is None:
+            return
+
+        muni_nombre, localidad = resultado
+
+        print("\n\t=== CONSULTA HISTÓRICA POR PERÍODO DE TIEMPO ===")
+        fecha_inicio = input("Ingrese la fecha de inicio (siguiendo el formato AAAA-MM-DD): ").strip()
+        fecha_fin = input("Ingrese la fecha de fin (siguiendo el formato AAAA-MM-DD): ").strip()
+
+        print("\nDescargando datos históricos...")
+        registros = self.consultar_historico_api(localidad, fecha_inicio, fecha_fin)
+
+        if not registros or len(registros) == 0:
+            print("No se obtuvieron registros para las fechas especificadas.")
+            return
+
+        datos_lista = []
+        for registro in registros:
+            datos_lista.append([
+                registro.fecha, registro.temperatura, registro.humedad, registro.precipitacion, registro.velocidad_viento
+            ])
+
+        df = pd.DataFrame(datos_lista, columns=["Fecha", "Temperatura", "Humedad", "Precipitacion", "Viento"])
+        df["Fecha"] = pd.to_datetime(df["Fecha"])
+        df["Año"] = df["Fecha"].dt.year
+        df["Mes_Año"] = df["Fecha"].dt.to_period("M")
+
+        print(f"\n\t=== ANÁLISIS HISTÓRICO: {localidad.nombre.upper()} ({muni_nombre}) ===")
+        print("\n\t=== RESUMEN MENSUAL ===")
+        resumen_mes = df.groupby("Mes_Año").agg({
+            "Temperatura": "mean",
+            "Humedad": "mean",
+            "Precipitacion": "sum", 
+            "Viento": "mean"
+        })
+
+        for mes, fila in resumen_mes.iterrows():
+            print(f"Mes: {mes} | Temp Prom: {fila['Temperatura']:.2f} °C | Humedad Prom: {fila['Humedad']:.2f}% | Precip Acum: {fila['Precipitacion']:.2f} mm | Viento Prom: {fila['Viento']:.2f} km/h")
+
+        arr_temps = np.array(df["Temperatura"])
+        arr_hums = np.array(df["Humedad"])
+        arr_precs = np.array(df["Precipitacion"])
+        arr_viens = np.array(df["Viento"])
+
+        print("\n\t=== VALORES PROMEDIOS GENERALES ===")
+        print(f"Temperatura promedio:  {np.nanmean(arr_temps):.2f} °C")  
+        print(f"Humedad rel. promedio: {np.nanmean(arr_hums):.2f} %")
+        print(f"Precipitación diaria promedio: {np.nanmean(arr_precs):.2f} mm")
+        print(f"Velocidad viento promedio: {np.nanmean(arr_viens):.2f} km/h")
+
+        resumen_anio = df.groupby("Año").agg({
+            "Temperatura": "mean",
+            "Humedad": "mean",
+            "Precipitacion": "sum"
+        })
+
+        anio_mas_caluroso = resumen_anio["Temperatura"].idxmax()
+        anio_mas_fresco = resumen_anio["Temperatura"].idxmin()
+        anio_mas_lluvioso = resumen_anio["Precipitacion"].idxmax()
+        anio_mas_humedo = resumen_anio["Humedad"].idxmax()
+
+        print("\n\t=== EXTRACTO ANUAL DE EXTREMOS ===")
+        print(f"Año más caluroso:           {anio_mas_caluroso} ({resumen_anio.loc[anio_mas_caluroso, 'Temperatura']:.2f} °C)")
+        print(f"Año más fresco:             {anio_mas_fresco} ({resumen_anio.loc[anio_mas_fresco, 'Temperatura']:.2f} °C)")
+        print(f"Año de mayor precipitación: {anio_mas_lluvioso} ({resumen_anio.loc[anio_mas_lluvioso, 'Precipitacion']:.2f} mm)")
+        print(f"Año de mayor humedad:       {anio_mas_humedo} ({resumen_anio.loc[anio_mas_humedo, 'Humedad']:.2f} %)")
+
+        """Generación de gráficos de líneas con Matplotlib. Crea 4 subgráficos para comparar la evolución anual (día a día) de
+        cada una de las cuatro variables meteorológicas evaluadas.
+        """
+        
+        print("\nEstamos generando los gráficos comparativos... (Debe cerrar el gráfico para poder regresar al menú principal).")
+        fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+        fig.suptitle(f"Evolución Meteorológica Histórica - {localidad.nombre}", fontsize=14)
+
+        for anio, grupo in df.groupby("Año"):
+            axes[0, 0].plot(grupo["Fecha"].dt.dayofyear, grupo["Temperatura"], label=str(anio))
+        axes[0, 0].set_title("Evolución de Temperatura (°C)")
+        axes[0, 0].set_xlabel("Día del Año")
+        axes[0, 0].legend()
+
+        for anio, grupo in df.groupby("Año"):
+            axes[0, 1].plot(grupo["Fecha"].dt.dayofyear, grupo["Humedad"], label=str(anio))
+        axes[0, 1].set_title("Evolución de Humedad Relativa (%)")
+        axes[0, 1].set_xlabel("Día del Año")
+        axes[0, 1].legend()
+
+        for anio, grupo in df.groupby("Año"):
+            axes[1, 0].plot(grupo["Fecha"].dt.dayofyear, grupo["Precipitacion"], label=str(anio))
+        axes[1, 0].set_title("Precipitación Acumulada (mm)")
+        axes[1, 0].set_xlabel("Día del Año")
+        axes[1, 0].legend()
+
+        for anio, grupo in df.groupby("Año"):
+            axes[1, 1].plot(grupo["Fecha"].dt.dayofyear, grupo["Viento"], label=str(anio))
+        axes[1, 1].set_title("Velocidad del Viento (km/h)")
+        axes[1, 1].set_xlabel("Día del Año")
+        axes[1, 1].legend()
+
+        plt.tight_layout()
+        plt.show()
